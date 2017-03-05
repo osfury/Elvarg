@@ -204,6 +204,42 @@ public class Player extends Character {
 			getInventory().refreshItems();
 			setUpdateInventory(false);
 		}
+		
+		//Stats regeneration
+				if(regenTimer.secondsElapsed() >= getRegenTimer()) {
+					
+					for(Skill skill : Skill.values()) {
+						int current = getSkillManager().getCurrentLevel(skill);
+						int max = getSkillManager().getMaxLevel(skill);
+						if(current > max) {
+
+							//Never decrease Hitpoints / Prayer
+							if(skill != Skill.HITPOINTS && skill != Skill.PRAYER) {
+								getSkillManager().decreaseCurrentLevel(skill, 1, 1);
+							}
+
+						} else if(current < max) {
+							int restoreRate = 1;
+							
+							//Rapid restore effect - 2x restore rate for all stats except hp/prayer
+							//Rapid heal - 2x restore rate for hitpoints
+							if(skill != Skill.HITPOINTS && skill != Skill.PRAYER) {
+								if(PrayerHandler.isActivated(this, PrayerHandler.RAPID_RESTORE)) {
+									restoreRate = 2;
+								}
+							} else if(skill == Skill.HITPOINTS) {
+								if(PrayerHandler.isActivated(this, PrayerHandler.RAPID_HEAL)) {
+									restoreRate = 2;
+								}
+							}
+							
+							getSkillManager().increaseCurrentLevel(skill, restoreRate, max);
+						}
+					}
+					
+					//If preserve is activated, stats last 20% longer.
+					regenTimer.start(getRegenTimer());
+				}
 	}
 
 	public void save() {
@@ -386,6 +422,8 @@ public class Player extends Character {
 					.sendMessage("::setlevel skillId level").sendMessage("::master").sendMessage("::runes");
 
 		}
+		
+		regenTimer.start(getRegenTimer());
 
 		// Add the player to register queue
 		World.getPlayerAddQueue().add(this);
@@ -511,10 +549,16 @@ public class Player extends Character {
 
 	// Trading
 	private Trading trading = new Trading(this);
-
+	
 	/*
 	 * Getters/Setters
 	 */
+	
+	private final SecondsTimer regenTimer = new SecondsTimer();
+
+	private int getRegenTimer() {
+		return PrayerHandler.isActivated(this, PrayerHandler.PRESERVE) ? 72 : 60;
+	}
 
 	public PlayerSession getSession() {
 		return session;

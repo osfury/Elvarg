@@ -502,5 +502,33 @@ public class SkillManager {
 			1096278, 1210421, 1336443, 1475581, 1629200, 1798808, 1986068, 2192818, 2421087, 2673114, 2951373, 3258594,
 			3597792, 3972294, 4385776, 4842295, 5346332, 5902831, 6517253, 7195629, 7944614, 8771558, 9684577, 10692629,
 			11805606, 13034431 };
-
+	/**
+	 * Increases the current level
+	 * @param skill
+	 * @param boostLevel
+	 * @param cap
+	 */
+	public void increaseCurrentLevel(Skill skill, int amount, int max) {
+		final int curr = getCurrentLevel(skill);
+		if((curr + amount) > max) {
+			setCurrentLevel(skill, max);
+			return;
+		}
+		setCurrentLevel(skill, curr + amount);
+	}
+	
+     /**
+     * Decrements this level by {@code amount} to {@code minimum}.
+     *
+     * @param amount
+     *            the amount to decrease this level by.
+     */
+    public void decreaseCurrentLevel(Skill skill, int amount, int minimum) {
+    	final int curr = getCurrentLevel(skill);
+        if ((curr - amount) < minimum) {
+        	setCurrentLevel(skill, minimum);
+            return;
+        }
+        setCurrentLevel(skill, curr - amount);
+    }
 }
