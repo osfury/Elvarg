@@ -15,18 +15,18 @@
   "rigour": false,
   "augury": false,
   "has-veng": false,
-  "last-veng": 0,
+  "last-veng": -94,
   "running": true,
   "run-energy": 100,
   "spec-percentage": 100,
   "recoil-damage": 0,
   "poison-damage": 0,
-  "poison-immunity": 0,
-  "overload-timer": 0,
-  "fire-immunity": 0,
-  "teleblock-timer": 0,
-  "prayerblock-timer": 0,
-  "skull-timer": -138767,
+  "poison-immunity": -94,
+  "overload-timer": -94,
+  "fire-immunity": -94,
+  "teleblock-timer": -94,
+  "prayerblock-timer": -94,
+  "skull-timer": -138927,
   "target-kills": 0,
   "normal-kills": 0,
   "deaths": 0,
@@ -337,7 +337,9 @@
       13034431
     ]
   },
-  "friends": [],
+  "friends": [
+    761604
+  ],
   "ignores": [],
   "bank-0": [
     {
