@@ -35,6 +35,7 @@ import org.seven.cache.graphics.RSFont;
 import org.seven.scene.graphic.Fog;
 import org.seven.util.CacheUtils;
 
+import com.runescape.Client.ScreenMode;
 import com.runescape.cache.FileArchive;
 import com.runescape.cache.FileStore;
 import com.runescape.cache.FileStore.Store;
@@ -755,6 +756,30 @@ public class Client extends GameApplet {
 					} else if (s1 != null && s1.startsWith("@cr3@")) {
 						s1 = s1.substring(5);
 						data = 3;
+					} else if(s1 != null && s1.startsWith("@cr4@")) {
+						s1 = s1.substring(5);
+						data = 4;
+					} else if(s1 != null && s1.startsWith("@cr5@")) {
+						s1 = s1.substring(5);
+						data = 5;
+					} else if(s1 != null && s1.startsWith("@cr6@")) {
+						s1 = s1.substring(5);
+						data = 6;
+					} else if(s1 != null && s1.startsWith("@cr7@")) {
+						s1 = s1.substring(5);
+						data = 7;
+					} else if(s1 != null && s1.startsWith("@cr8@")) {
+						s1 = s1.substring(5);
+						data = 8;
+					} else if(s1 != null && s1.startsWith("@cr9@")) {
+						s1 = s1.substring(5);
+						data = 9;
+					} else if(s1 != null && s1.startsWith("@cr10@")) {
+						s1 = s1.substring(5);
+						data = 10;
+					} else if(s1 != null && s1.startsWith("@cr11@")) {
+						s1 = s1.substring(5);
+						data = 11;
 					}
 					if (chatType == 0) {
 						if (chatTypeView == 5 || chatTypeView == 0) {
@@ -780,6 +805,42 @@ public class Client extends GameApplet {
 								xPos += 14;
 							} else if (data == 3) {
 								modIcons[2].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 4) {
+								modIcons[3].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 5) {
+								modIcons[4].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 6) {
+								modIcons[5].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 7) {
+								modIcons[6].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 8) {
+								modIcons[7].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 9) {
+								modIcons[8].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 10) {
+								modIcons[9].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 11) {
+								modIcons[10].drawSprite(xPos + 1,
+										yPos - 12 + yOffset);
+								xPos += 14;
+							} else if (data == 12) {
+								modIcons[11].drawSprite(xPos + 1,
 										yPos - 12 + yOffset);
 								xPos += 14;
 							}
@@ -812,6 +873,33 @@ public class Client extends GameApplet {
 								k1 += 12;
 							} else if (data == 3) {
 								modIcons[2].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 4) {
+								modIcons[3].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 5) {
+								modIcons[4].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 6) {
+								modIcons[5].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 7) {
+								modIcons[6].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 8) {
+								modIcons[7].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 9) {
+								modIcons[8].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 10) {
+								modIcons[9].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 11) {
+								modIcons[10].drawSprite(k1, yPos - 12 + yOffset);
+								k1 += 12;
+							} else if (data == 12) {
+								modIcons[11].drawSprite(k1, yPos - 12 + yOffset);
 								k1 += 12;
 							}
 							newRegularFont.drawBasicString(s1 + ":", k1,
@@ -6528,6 +6616,33 @@ public class Client extends GameApplet {
 						} else if (myPrivilege == 1) {
 							sendMessage(localPlayer.spokenText, 2,
 									"@cr1@" + localPlayer.name);
+						} else if (myPrivilege == 3) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr3@" + localPlayer.name);
+						} else if (myPrivilege == 4) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr4@" + localPlayer.name);
+						} else if (myPrivilege == 5) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr5@" + localPlayer.name);
+						} else if (myPrivilege == 6) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr6@" + localPlayer.name);
+						} else if (myPrivilege == 7) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr7@" + localPlayer.name);
+						} else if (myPrivilege == 8) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr8@" + localPlayer.name);
+						} else if (myPrivilege == 9) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr9@" + localPlayer.name);
+						} else if (myPrivilege == 10) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr10@" + localPlayer.name);
+						} else if (myPrivilege == 11) {
+							sendMessage(localPlayer.spokenText, 2,
+									"@cr11@" + localPlayer.name);
 						} else {
 							sendMessage(localPlayer.spokenText, 2, localPlayer.name);
 						}
@@ -6577,6 +6692,38 @@ public class Client extends GameApplet {
 			if (crownName != null && crownName.startsWith("@cr3@")) {
 				crownName = crownName.substring(5);
 			}
+			
+			if (crownName != null && crownName.startsWith("@cr4@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr5@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr6@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr7@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr8@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr9@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr10@")) {
+				crownName = crownName.substring(5);
+			}
+			
+			if (crownName != null && crownName.startsWith("@cr11@")) {
+				crownName = crownName.substring(5);
+			}
 
 			if ((privacyOptionType == 1 || privacyOptionType == 2) && (privacyOptionType == 1 || publicChatMode == 0
 					|| publicChatMode == 1 && isFriendOrSelf(crownName))) {
@@ -6615,6 +6762,22 @@ public class Client extends GameApplet {
 			if (s != null && s.startsWith("@cr2@"))
 				s = s.substring(5);
 			if (s != null && s.startsWith("@cr3@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr4@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr5@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr6@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr7@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr8@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr9@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr10@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr11@"))
 				s = s.substring(5);
 			if ((j1 == 5 || j1 == 6) && (splitPrivateChat == 0 || chatTypeView == 2)
 					&& (j1 == 6 || privateChatMode == 0
@@ -6658,6 +6821,22 @@ public class Client extends GameApplet {
 			if (s != null && s.startsWith("@cr2@"))
 				s = s.substring(5);
 			if (s != null && s.startsWith("@cr3@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr4@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr5@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr6@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr7@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr8@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr9@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr10@"))
+				s = s.substring(5);
+			if (s != null && s.startsWith("@cr11@"))
 				s = s.substring(5);
 			if (chatTypeView == 3 && j1 == 4
 					&& (tradeMode == 0 || tradeMode == 1 && isFriendOrSelf(s))) {
@@ -6718,6 +6897,30 @@ public class Client extends GameApplet {
 				s = s.substring(5);
 			}
 			if (s != null && s.startsWith("@cr3@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr4@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr5@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr6@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr7@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr8@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr9@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr10@")) {
+				s = s.substring(5);
+			}
+			if (s != null && s.startsWith("@cr11@")) {
 				s = s.substring(5);
 			}
 			if (j1 == 0)
@@ -7109,6 +7312,42 @@ public class Client extends GameApplet {
 					s = s.substring(5);
 					byte1 = 2;
 				}
+				if (s != null && s.startsWith("@cr3@")) {
+						s = s.substring(5);
+						byte1 = 3;
+				}
+				if (s != null && s.startsWith("@cr4@")) {
+						s = s.substring(5);
+						byte1 = 4;
+				}
+				if (s != null && s.startsWith("@cr5@")) {
+						s = s.substring(5);
+						byte1 = 5;	
+				}		
+				if (s != null && s.startsWith("@cr6@")) {
+						s = s.substring(5);
+						byte1 = 6;
+				}
+				if (s != null && s.startsWith("@cr7@")) {
+						s = s.substring(5);
+						byte1 = 7;
+				}
+				if (s != null && s.startsWith("@cr8@")) {
+						s = s.substring(5);
+						byte1 = 8;
+				}
+				if (s != null && s.startsWith("@cr9@")) {
+						s = s.substring(5);
+						byte1 = 9;
+				}
+				if (s != null && s.startsWith("@cr10@")) {
+						s = s.substring(5);
+						byte1 = 10;
+				}
+				if (s != null && s.startsWith("@cr11@")) {
+						s = s.substring(5);
+						byte1 = 11;
+				}
 				if ((k == 3 || k == 7) && (k == 7 || privateChatMode == 0
 						|| privateChatMode == 1 && isFriendOrSelf(s))) {
 					int l = 329 - i * 13;
@@ -7125,6 +7364,46 @@ public class Client extends GameApplet {
 					}
 					if (byte1 == 2) {
 						modIcons[1].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 3) {
+						modIcons[2].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 4) {
+						modIcons[3].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 5) {
+						modIcons[4].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 6) {
+						modIcons[5].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 7) {
+						modIcons[6].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 8) {
+						modIcons[7].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 9) {
+						modIcons[8].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 10) {
+						modIcons[9].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 11) {
+						modIcons[10].drawSprite(k1, l - 12);
+						k1 += 12;
+					}
+					if (byte1 == 12) {
+						modIcons[11].drawSprite(k1, l - 12);
 						k1 += 12;
 					}
 					textDrawingArea.render(0, s + ": " + chatMessages[j], l, k1);
@@ -8782,7 +9061,7 @@ public class Client extends GameApplet {
 			mapDotClan = new Sprite(mediaArchive, "mapdots", 5);
 			scrollBar1 = new Sprite(mediaArchive, "scrollbar", 0);
 			scrollBar2 = new Sprite(mediaArchive, "scrollbar", 1);
-			for (int l4 = 0; l4 < 3; l4++)
+			for (int l4 = 0; l4 < 12; l4++)
 				modIcons[l4] = new Sprite(mediaArchive, "mod_icons", l4);
 			Sprite sprite = new Sprite(mediaArchive, "screenframe", 0);
 			leftFrame = new ProducingGraphicsBuffer(sprite.myWidth, sprite.myHeight);
@@ -10561,10 +10840,28 @@ public class Client extends GameApplet {
 					player.rights = privilege;
 					player.textEffect = textInfo & 0xff;
 					player.textCycle = 150;
-					if (privilege == 2 || privilege == 3)
+					if (privilege == 2)
 						sendMessage(text, 1, "@cr2@" + player.name);
 					else if (privilege == 1)
 						sendMessage(text, 1, "@cr1@" + player.name);
+					else if (privilege == 3)
+						sendMessage(text, 1, "@cr3@" + player.name);
+					else if (privilege == 4)
+						sendMessage(text, 1, "@cr4@" + player.name);
+					else if (privilege == 5)
+						sendMessage(text, 1, "@cr5@" + player.name);
+					else if (privilege == 6)
+						sendMessage(text, 1, "@cr6@" + player.name);
+					else if (privilege == 7)
+						sendMessage(text, 1, "@cr7@" + player.name);
+					else if (privilege == 8)
+						sendMessage(text, 1, "@cr8@" + player.name);
+					else if (privilege == 9)
+						sendMessage(text, 1, "@cr9@" + player.name);
+					else if (privilege == 10)
+						sendMessage(text, 1, "@cr10@" + player.name);
+					else if (privilege == 11)
+						sendMessage(text, 1, "@cr11@" + player.name);
 					else
 						sendMessage(text, 2, player.name);
 					} catch (Exception exception) {
@@ -11877,6 +12174,33 @@ public class Client extends GameApplet {
 					name = name.substring(5);
 				}
 				if (name != null && name.startsWith("@cr2@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr3@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr4@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr5@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr6@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr7@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr8@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr9@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr10@")) {
+					name = name.substring(5);
+				}
+				if (name != null && name.startsWith("@cr11@")) {
 					name = name.substring(5);
 				}
 				if ((type == 3 || type == 7) && (type == 7 || privateChatMode == 0
@@ -13903,12 +14227,48 @@ public class Client extends GameApplet {
 						//ChatMessageCodec.decode(packetSize - 13, incoming);
 						// if(l21 != 3)
 						// s9 = Censor.doCensor(s9);
-						if (rights == 2 || rights == 3)
+						if (rights == 2)
 							sendMessage(message, 7, "@cr2@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 3)
+							sendMessage(message, 7, "@cr3@"
 									+ StringUtils.formatText(StringUtils
 											.decodeBase37(encodedName)));
 						else if (rights == 1)
 							sendMessage(message, 7, "@cr1@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 4)
+							sendMessage(message, 7, "@cr4@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 5)
+							sendMessage(message, 7, "@cr5@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 6)
+							sendMessage(message, 7, "@cr6@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 7)
+							sendMessage(message, 7, "@cr7@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 8)
+							sendMessage(message, 7, "@cr8@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 9)
+							sendMessage(message, 7, "@cr9@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 10)
+							sendMessage(message, 7, "@cr10@"
+									+ StringUtils.formatText(StringUtils
+											.decodeBase37(encodedName)));
+						else if (rights == 11)
+							sendMessage(message, 7, "@cr11@"
 									+ StringUtils.formatText(StringUtils
 											.decodeBase37(encodedName)));
 						else
@@ -14811,7 +15171,7 @@ public class Client extends GameApplet {
 		anInt1210 = 2;
 		anInt1211 = 78;
 		promptInput = "";
-		modIcons = new Sprite[3];
+		modIcons = new Sprite[12];
 		tabId = 3;
 		updateChatbox = false;
 		fadeMusic = true;
