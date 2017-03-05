@@ -777,7 +777,7 @@ public class RSFont extends Rasterizer2D {
     	text = text.replaceAll("@cr8@", "<img=8>");
     	text = text.replaceAll("@cr9@", "<img=9>");
     	text = text.replaceAll("@cr10@", "<img=10>");
-    	text = text.replaceAll("@cr11@", "<img=11>");
+    	text = text.replaceAll("@cr11@", "<img=11>"); //crowns
     	return text;
     }
 

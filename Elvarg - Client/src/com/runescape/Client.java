@@ -14219,6 +14219,7 @@ public class Client extends GameApplet {
 
 					}
 				}
+				// crowns
 				if (!ignoreRequest && onTutorialIsland == 0)
 					try {
 						privateMessageIds[privateMessageCount] = messageId;
