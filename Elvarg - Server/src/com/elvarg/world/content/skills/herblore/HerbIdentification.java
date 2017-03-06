@@ -3,8 +3,10 @@ package com.elvarg.world.content.skills.herblore;
 import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Random;
 
 import com.elvarg.cache.impl.definitions.ItemDefinition;
+import com.elvarg.randomevents.RandomEvent;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Item;
 import com.elvarg.world.model.Skill;
@@ -89,6 +91,9 @@ public enum HerbIdentification {
 				player.getSkillManager().addExperience(Skill.HERBLORE, (int) herb.get().getExperience());
 				player.getPacketSender().sendMessage("You clean the dirt off the "
 						+ ItemDefinition.forId(herb.get().getGrimyHerb().getId()).getName().toLowerCase() + ".");
+				
+				//Dummy testing events
+				RandomEvent.event(RandomEvent.RANDOM_MOVEMENT).executeEvent(player);
 			} else {
 				DialogueManager.sendStatement(player,
 						"You need a Herblore level of atleast " + herb.get().getRequired() + " to clean this herb.");
