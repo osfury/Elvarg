@@ -19,17 +19,19 @@ import com.elvarg.world.model.dialogue.DialogueManager;
  * @since March 4th, 2017.
  *
  */
-public class CreateFinishedPotionTask extends Task {
+public class CreateUnfinishedPotionTask extends Task {
+
+	public static final int VIAL_OF_WATER = 227;
 
 	private static final Animation CREATE_POTION_ANIMATION = new Animation(363, Priority.LOW);
 
 	private final Player player;
 
-	private final Optional<FinishedPotionData> potion;
+	private final Optional<UnfinishedPotionData> potion;
 
 	private int amount;
 
-	public CreateFinishedPotionTask(Player player, Optional<FinishedPotionData> potion, int amount) {
+	public CreateUnfinishedPotionTask(Player player, Optional<UnfinishedPotionData> potion, int amount) {
 		super(4, player, true);
 		this.player = player;
 		this.potion = potion;
@@ -37,10 +39,10 @@ public class CreateFinishedPotionTask extends Task {
 	}
 
 	public static void attempt(Player player, Item item, int amount) {
-		final Optional<FinishedPotionData> potion = FinishedPotionData.get(item);
+		final Optional<UnfinishedPotionData> potion = UnfinishedPotionData.get(item);
 		if (potion.isPresent()) {
 			if (player.getSkillManager().getCurrentLevel(Skill.HERBLORE) >= potion.get().getRequirement()) {
-				TaskManager.submit(new CreateFinishedPotionTask(player, potion, amount));
+				TaskManager.submit(new CreateUnfinishedPotionTask(player, potion, amount));
 			} else {
 				DialogueManager.sendStatement(player, "You need a Herblore level of atleast "
 						+ potion.get().getRequirement() + " to make this potion.");
@@ -53,9 +55,8 @@ public class CreateFinishedPotionTask extends Task {
 	private void create(Player player) {
 		if (potion.isPresent()) {
 			player.getInventory().delete(potion.get().getIngredient());
-			player.getInventory().delete(potion.get().getUnfinishedPotion());
-			player.getInventory().add(potion.get().getFinishedPotion());
-			player.getSkillManager().addExperience(Skill.HERBLORE, potion.get().getExperience());
+			player.getInventory().delete(VIAL_OF_WATER, 1);
+			player.getInventory().add(potion.get().getUnfinished());
 		}
 	}
 
@@ -63,7 +64,7 @@ public class CreateFinishedPotionTask extends Task {
 	protected void execute() {
 		if (potion.isPresent()) {
 			if (player.getInventory()
-					.contains(new Item[] { potion.get().getIngredient(), potion.get().getUnfinishedPotion() })) {
+					.contains(new Item[] { potion.get().getIngredient(), new Item(VIAL_OF_WATER, 1) })) {
 				player.performAnimation(CREATE_POTION_ANIMATION);
 				player.getPacketSender()
 						.sendMessage("You mix the "
