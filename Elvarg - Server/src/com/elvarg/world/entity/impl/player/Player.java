@@ -133,14 +133,11 @@ public class Player extends Character {
 
 	@Override
 	public int getBaseAttackSpeed() {
-
 		// Gets attack speed for player's weapon
 		// If player is using magic, attack speed is
 		// Calculated in the MagicCombatMethod class.
-
 		int speed = getCombat().getWeapon().getSpeed();
-		// if(getCombat().getFightType().getStyle() == FightStyle.AGGRESSIVE) {
-		if (getCombat().getFightType().getStyle().toString().toLowerCase().contains("rapid")) {
+		if (getCombat().getFightType().toString().toLowerCase().contains("rapid")) {
 			speed--;
 		}
 
