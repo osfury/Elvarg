@@ -5,6 +5,7 @@ import com.elvarg.net.packet.Packet;
 import com.elvarg.net.packet.PacketConstants;
 import com.elvarg.net.packet.PacketListener;
 import com.elvarg.world.content.Consumables;
+import com.elvarg.world.content.skills.herblore.CreateFinishedPotionTask;
 import com.elvarg.world.content.skills.herblore.HerbIdentification;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Item;
@@ -13,7 +14,24 @@ import com.elvarg.world.model.teleportation.tabs.TabHandler;
 @SuppressWarnings("unused")
 public class ItemActionPacketListener implements PacketListener {
 
-	private static void firstAction(final Player player, Packet packet) {
+	private void onItemAction(final Player player, Packet packet) {
+		int firstSlot = packet.readShort();
+		int secondSlot = packet.readShortA();
+		final Item first = player.getInventory().forSlot(firstSlot);
+		final Item second = player.getInventory().forSlot(secondSlot);
+		if (first == null || second == null) {
+			return;
+		}
+		if (!player.getInventory().contains(new Item[] { first, second })) {
+			return;
+		}
+		if (ItemDefinition.forId(first.getId()).getName().contains("(unf)")) {
+			CreateFinishedPotionTask.display(player, first);
+			// CreateFinishedPotionTask.attempt(player, first, 28);
+		}
+	}
+
+	private void firstAction(final Player player, Packet packet) {
 		int interfaceId = packet.readUnsignedShort();
 		int itemId = packet.readShort();
 		int slot = packet.readShort();
@@ -34,7 +52,7 @@ public class ItemActionPacketListener implements PacketListener {
 		}
 	}
 
-	public static void secondAction(Player player, Packet packet) {
+	private void secondAction(final Player player, Packet packet) {
 		int interfaceId = packet.readLEShortA();
 		int slot = packet.readLEShort();
 		int itemId = packet.readShortA();
@@ -47,7 +65,7 @@ public class ItemActionPacketListener implements PacketListener {
 		}
 	}
 
-	public void thirdClickAction(Player player, Packet packet) {
+	private void thirdClickAction(final Player player, Packet packet) {
 		int itemId = packet.readShortA();
 		int slot = packet.readLEShortA();
 		int interfaceId = packet.readLEShortA();
@@ -74,6 +92,9 @@ public class ItemActionPacketListener implements PacketListener {
 			break;
 		case PacketConstants.THIRD_ITEM_ACTION_OPCODE:
 			thirdClickAction(player, packet);
+			break;
+		case PacketConstants.ITEM_ON_ITEM:
+			onItemAction(player, packet);
 			break;
 		}
 	}

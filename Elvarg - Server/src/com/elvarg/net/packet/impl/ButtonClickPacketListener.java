@@ -29,17 +29,13 @@ public class ButtonClickPacketListener implements PacketListener {
 	@Override
 	public void handleMessage(Player player, Packet packet) {
 		int button = packet.readInt();
-
 		if (player.getRights().isStaff()) {
 			player.getPacketSender().sendConsoleMessage("Button: " + button);
 		}
-
 		if (handlers(player, button)) {
 			return;
 		}
-
 		switch (button) {
-
 		case LOGOUT:
 			if (player.canLogout()) {
 				player.logout();
@@ -170,10 +166,6 @@ public class ButtonClickPacketListener implements PacketListener {
 			if (player.getDialogueOptions() != null) {
 				player.getDialogueOptions().handleOption5(player);
 			}
-			break;
-		default:
-			// player.getPacketSender().sendMessage("Player
-			// "+player.getUsername()+", click button: "+button);
 			break;
 		}
 	}

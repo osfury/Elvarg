@@ -260,12 +260,10 @@ public abstract class ItemContainer {
 		if (item.length == 0) {
 			return false;
 		}
-
 		for (Item nextItem : item) {
 			if (nextItem == null) {
 				continue;
 			}
-
 			if (!contains(nextItem.getId())) {
 				return false;
 			}

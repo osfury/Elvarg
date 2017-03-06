@@ -340,18 +340,6 @@ public class PacketSender {
 		return this;
 	}
 
-	/*
-	 * public PacketSender sendBlinkingHint(String title, String information,
-	 * int x, int y, int speed, int pause, int type, final int time) {
-	 * player.getSession().queueMessage(new
-	 * PacketBuilder(179).putString(title).putString(information).putShort(x).
-	 * putShort(y).put(speed).put(pause).put(type)); if(type > 0) {
-	 * TaskManager.submit(new Task(time, player, false) {
-	 * 
-	 * @Override public void execute() {
-	 * player.getPacketSender().sendBlinkingHint("", "", 0, 0, 0, 0, -1, 0);
-	 * stop(); } }); } return this; }
-	 */
 	public PacketSender sendInterfaceAnimation(int interfaceId, Animation animation) {
 		PacketBuilder out = new PacketBuilder(200);
 		out.putShort(interfaceId);

@@ -90,6 +90,7 @@ public class PacketConstants {
 	public static final int FIRST_ITEM_ACTION_OPCODE = 122;
 	public static final int SECOND_ITEM_ACTION_OPCODE = 75;
 	public static final int THIRD_ITEM_ACTION_OPCODE = 16;
+	public static final int ITEM_ON_ITEM = 53;
 
 	static {
 		for (int i = 0; i < PACKETS.length; i++) {
@@ -147,6 +148,7 @@ public class PacketConstants {
 		PACKETS[FIRST_ITEM_ACTION_OPCODE] = new ItemActionPacketListener();
 		PACKETS[SECOND_ITEM_ACTION_OPCODE] = new ItemActionPacketListener();
 		PACKETS[THIRD_ITEM_ACTION_OPCODE] = new ItemActionPacketListener();
+		PACKETS[ITEM_ON_ITEM] = new ItemActionPacketListener();
 
 		PACKETS[ADD_FRIEND_OPCODE] = new PlayerRelationPacketListener();
 		PACKETS[REMOVE_FRIEND_OPCODE] = new PlayerRelationPacketListener();
