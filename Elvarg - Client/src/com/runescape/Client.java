@@ -3421,6 +3421,8 @@ public class Client extends GameApplet {
 		if (player == null || !player.isVisible()) {
 			return false;
 		}
+		if (localPlayer.x >> 7 == destinationX && localPlayer.y >> 7 == destY)
+			destinationX = 0;
 		player.aBoolean1699 = (lowMemory && playerCount > 50 || playerCount > 200) && !flag && player.movementAnimation == player.idleAnimation;
 		int j1 = player.x >> 7;
 			int k1 = player.y >> 7;
