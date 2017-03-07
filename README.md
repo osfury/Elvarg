@@ -1,4 +1,4 @@
-[logo]: http://i68.tinypic.com/el430k.jpg "Elvarg Logo"
+![Elvarg Logo](http://i68.tinypic.com/el430k.jpg "Elvarg Logo")
 
 # Create the best user-friendly base possible, together!
 If you're a java programmer, and would like to contribute Fixes, Reports, Contents, etc.. they simply do a Pull request, or report the issue of how it's done. When Commiting work do your best to document and have clean and effecient code to work with for everyone else.
