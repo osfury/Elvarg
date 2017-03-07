@@ -99,7 +99,7 @@ public final class ObjectDefinition {
 				|| id == 40108 || id == 59 || id == 2069 || id == 36846;
 		if (objectDef.name != null) {
 			if (objectDef.name.toLowerCase().contains(("door")) || objectDef.name.toLowerCase().contains(("gate"))
-					|| objectDef.name.toLowerCase().contains(("ditch"))) {
+					/*|| objectDef.name.toLowerCase().contains(("ditch"))*/) {
 				removeObject = true;
 			}
 		}
