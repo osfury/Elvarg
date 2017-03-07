@@ -30,14 +30,13 @@ public class CreateFinishedPotionTask extends Task {
 	private int amount;
 
 	public CreateFinishedPotionTask(Player player, Optional<FinishedPotionData> potion, int amount) {
-		super(4, player, true);
+		super(3, player, true);
 		this.player = player;
 		this.potion = potion;
 		this.amount = amount;
 	}
 
-	public static void attempt(Player player, Item item, int amount) {
-		final Optional<FinishedPotionData> potion = FinishedPotionData.get(item);
+	public void start(Player player) {
 		if (potion.isPresent()) {
 			if (player.getSkillManager().getCurrentLevel(Skill.HERBLORE) >= potion.get().getRequirement()) {
 				TaskManager.submit(new CreateFinishedPotionTask(player, potion, amount));

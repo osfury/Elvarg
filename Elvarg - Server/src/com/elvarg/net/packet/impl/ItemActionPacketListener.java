@@ -1,5 +1,7 @@
 package com.elvarg.net.packet.impl;
 
+import java.util.Optional;
+
 import com.elvarg.cache.impl.definitions.ItemDefinition;
 import com.elvarg.net.packet.Packet;
 import com.elvarg.net.packet.PacketConstants;
@@ -7,7 +9,9 @@ import com.elvarg.net.packet.PacketListener;
 import com.elvarg.world.content.Consumables;
 import com.elvarg.world.content.skills.herblore.CreateFinishedPotionTask;
 import com.elvarg.world.content.skills.herblore.CreateUnfinishedPotionTask;
+import com.elvarg.world.content.skills.herblore.FinishedPotionData;
 import com.elvarg.world.content.skills.herblore.HerbIdentification;
+import com.elvarg.world.content.skills.herblore.UnfinishedPotionData;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Item;
 import com.elvarg.world.model.teleportation.tabs.TabHandler;
@@ -27,13 +31,21 @@ public class ItemActionPacketListener implements PacketListener {
 			return;
 		}
 		if (ItemDefinition.forId(first.getId()).getName().contains("(unf)")) {
-			CreateFinishedPotionTask.attempt(player, first, 28);
+			final Optional<FinishedPotionData> data = FinishedPotionData.get(first);
+			if (data.isPresent()) {
+				CreateFinishedPotionTask task = new CreateFinishedPotionTask(player, data, 28);
+				task.start(player);
+			}
 			return;
 		}
 		if (first.getId() == CreateUnfinishedPotionTask.VIAL_OF_WATER
 				&& ItemDefinition.forId(second.getId()).getName().contains("weed")
 				|| ItemDefinition.forId(second.getId()).getName().contains("leaf")) {
-			CreateUnfinishedPotionTask.attempt(player, second, 28);
+			final Optional<UnfinishedPotionData> data = UnfinishedPotionData.get(second);
+			if (data.isPresent()) {
+				CreateUnfinishedPotionTask task = new CreateUnfinishedPotionTask(player, data, 28);
+				task.start(player);
+			}
 			return;
 		}
 		player.getPacketSender().sendMessage("Nothing interesting happens..");

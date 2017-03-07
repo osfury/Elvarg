@@ -65,7 +65,7 @@ public enum FinishedPotionData {
 
 	SARADOMIN_BREW(new Item(6687), new Item(3002), new Item(6693), 81, 180);
 
-	public static final ImmutableSet<FinishedPotionData> POTION_VALUES = Sets
+	public final static ImmutableSet<FinishedPotionData> POTION_VALUES = Sets
 			.immutableEnumSet(EnumSet.allOf(FinishedPotionData.class));
 
 	public static Optional<FinishedPotionData> get(Item item) {
