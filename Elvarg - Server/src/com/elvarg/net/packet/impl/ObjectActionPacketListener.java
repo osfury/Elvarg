@@ -9,6 +9,7 @@ import com.elvarg.net.packet.Packet;
 import com.elvarg.net.packet.PacketConstants;
 import com.elvarg.net.packet.PacketListener;
 import com.elvarg.world.collision.region.RegionClipping;
+import com.elvarg.world.content.CrystalChest;
 import com.elvarg.world.entity.combat.magic.Autocasting;
 import com.elvarg.world.entity.impl.object.GameObject;
 import com.elvarg.world.entity.impl.player.Player;
@@ -54,11 +55,11 @@ public class ObjectActionPacketListener implements PacketListener {
 			player.getPacketSender()
 					.sendMessage("First click object id; [id, position] : [" + id + ", " + position.toString() + "]");
 		player.setWalkToTask(new WalkToTask(player, position, gameObject.getSize(), new FinalizedMovementTask() {
+
 			@Override
 			public void execute() {
 				AreaHandler.firstClickObject(player, id);
 				switch (id) {
-
 				case WILDERNESS_DITCH:
 					player.getMovementQueue().reset();
 					if (player.getForceMovement() == null) {
@@ -68,7 +69,9 @@ public class ObjectActionPacketListener implements PacketListener {
 										crossDitch, 0, 70, crossDitch.getY() == 3 ? 0 : 2, 6132)));
 					}
 					break;
-
+				case 172:
+					CrystalChest.onClick(player);
+					break;
 				case LUNAR_ALTAR:
 				case ANCIENT_ALTAR:
 
