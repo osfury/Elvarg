@@ -175,41 +175,35 @@ public class CombatFactory {
 
 	/**
 	 * Checks if an entity can reach a target.
-	 * 
-	 * @param attacker
-	 *            The entity which wants to attack.
-	 * @param cb_type
-	 *            The combat type the attacker is using.
-	 * @param target
-	 *            The victim.
-	 * @return True if attacker has the proper distance to attack, otherwise
-	 *         false.
+	 * @param attacker		The entity which wants to attack.
+	 * @param cb_type		The combat type the attacker is using.
+	 * @param target		The victim.
+	 * @return				True if attacker has the proper distance to attack, otherwise false.
 	 */
 	public static boolean canReach(Character attacker, CombatMethod method, Character target) {
-		if (!validTarget(attacker, target)) {
+		if(!validTarget(attacker, target)) {
 			return false;
 		}
-
-		// Walk back if npc is too far away from spawn position.
-		if (attacker.isNpc()) {
+		
+		//Walk back if npc is too far away from spawn position.
+		if(attacker.isNpc()) {
 			NPC npc = attacker.getAsNpc();
-			if (npc.getMovementCoordinator().getCoordinateState() == CoordinateState.RETREATING) {
+			if(npc.getMovementCoordinator().getCoordinateState() == CoordinateState.RETREATING) {
 				npc.getCombat().reset();
 				return false;
 			}
-			if (npc.getPosition().getDistance(npc.getSpawnPosition()) >= npc.getDefinition()
-					.getCombatFollowDistance()) {
+			if(npc.getPosition().getDistance(npc.getSpawnPosition()) >= npc.getDefinition().getCombatFollowDistance()) {
 				npc.getCombat().reset();
 				npc.getMovementCoordinator().setCoordinateState(CoordinateState.RETREATING);
 				return false;
 			}
 		}
-
+		
 		int distance = method.getAttackDistance(attacker);
 
-		if (attacker.isPlayer() && method.getCombatType() != CombatType.MELEE) {
-			if (target.getSize() >= 2) {
-				distance += target.getSize() - 1;
+		if(attacker.isPlayer() && method.getCombatType() != CombatType.MELEE) {
+			if(target.getSize() >= 2) {
+				distance += target.getSize()-1;
 			}
 		}
 
@@ -218,32 +212,29 @@ public class CombatFactory {
 			distance += 2;
 		}
 
-		// Check good distance?
-		if (!(attacker.getPosition().isWithinDistance(target.getPosition(), distance))) {
+		//Check good distance?
+		if(!(attacker.getPosition().isWithinDistance(target.getPosition(), distance))) {		
 			return false;
-		} else {
-			// Stop running forward if we're in distance.
-			attacker.getMovementQueue().reset();
 		}
 
-		// Check blocked projectiles
-		if (method.getCombatType() != CombatType.MELEE) {
-			/*
-			 * if(!RegionClipping.canProjectileAttack(attacker, target)) {
-			 * return false; }
-			 */
-		} else {
-			// Check diagonal block
-			if (RegionClipping.isInDiagonalBlock(attacker, target)) {
-				RS317PathFinder.solveDiagonalBlock(attacker, target);
-				return false;
-			}
+		//Stop running forward if we're in distance.
+		attacker.getMovementQueue().reset();
+				
+		//Check diagonal
+		if(RegionClipping.isInDiagonalBlock(attacker, target)) {
+			RS317PathFinder.solveDiagonalBlock(attacker, target);
+			return false;
 		}
+		
+		//Check projectiles..
+		if(!RegionClipping.canProjectileAttack(attacker, target)) {
+			return false;
+		}
+		
+		//Check same spot
+		if(attacker.getPosition().equals(target.getPosition())) {
 
-		// Check same spot
-		if (attacker.getPosition().equals(target.getPosition())) {
-
-			if (!attacker.getCombat().getFreezeTimer().finished()) {
+			if(!attacker.getCombat().getFreezeTimer().finished()) {
 				return false;
 			}
 
@@ -373,7 +364,10 @@ public class CombatFactory {
 				method.handleAfterHitEffects(qHit);
 			}
 		}
-
+		if (attacker.getAsPlayer().getEquipment().containsAny(3 /*range data*/))
+		{
+			method.getCombatType().equals(CombatType.MELEE.ordinal());
+		}
 		// Check for poisonous weapons..
 		// And do other effects, such as barrows effects..
 		if (attacker.isPlayer()) {
