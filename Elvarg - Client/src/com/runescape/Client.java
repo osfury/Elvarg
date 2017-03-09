@@ -7492,11 +7492,8 @@ public class Client extends GameApplet {
 										&& super.mouseY <= 50
 										: super.mouseX >= frameWidth - 117 && super.mouseX <= frameWidth - 86
 										&& super.mouseY >= 153 && super.mouseY <= 186;
-										specialHover = fixed
-												? super.mouseX >= 670 && super.mouseX <= 727 && super.mouseY >= 133
-												&& super.mouseY <= 164
-												: super.mouseX >= frameWidth - 62 && super.mouseX <= frameWidth - 5
-												&& super.mouseY >= 151 && super.mouseY <= 184;
+										specialHover = fixed ? super.mouseX >= 686 && super.mouseX <= 742 && super.mouseY >= 124 && super.mouseY <= 156 : 
+											super.mouseX >= frameWidth - 58 && super.mouseX <= frameWidth && super.mouseY >= 151 && super.mouseY <= 179;
 	}
 
 	private final int[] tabClickX = {38, 33, 33, 33, 33, 33, 38, 38, 33, 33, 33, 33, 33, 38},
@@ -9204,6 +9201,9 @@ public class Client extends GameApplet {
 	}
 
 	private void processMainScreenClick() {
+		if(specialHover) {
+			return;
+		}
 		if (openInterfaceId == 15244) {
 			return;
 		}
