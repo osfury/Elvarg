@@ -80,7 +80,8 @@ public class PacketConstants {
 	public static final int MAGIC_ON_PLAYER_OPCODE = 249;
 	public static final int BANK_TAB_CREATION_OPCODE = 216;
 	public static final int TRADE_REQUEST_OPCODE = 139;
-
+	public static final int ITEM_ON_OBJECT = 192;
+	
 	public static final int OBJECT_FIRST_CLICK_OPCODE = 132, OBJECT_SECOND_CLICK_OPCODE = 252,
 			OBJECT_THIRD_CLICK_OPCODE = 70, OBJECT_FOURTH_CLICK_OPCODE = 234, OBJECT_FIFTH_CLICK_OPCODE = 228;
 
@@ -160,5 +161,6 @@ public class PacketConstants {
 		PACKETS[ENTER_SYNTAX_OPCODE] = new EnterInputPacketListener();
 
 		PACKETS[TRADE_REQUEST_OPCODE] = new TradeRequestPacketListener();
+		PACKETS[ITEM_ON_OBJECT] = new ObjectActionPacketListener();
 	}
 }

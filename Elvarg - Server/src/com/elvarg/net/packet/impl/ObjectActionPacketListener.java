@@ -15,10 +15,12 @@ import com.elvarg.world.entity.impl.object.GameObject;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Animation;
 import com.elvarg.world.model.ForceMovement;
+import com.elvarg.world.model.Item;
 import com.elvarg.world.model.MagicSpellbook;
 import com.elvarg.world.model.PlayerRights;
 import com.elvarg.world.model.Position;
 import com.elvarg.world.model.Skill;
+import com.elvarg.world.model.container.impl.Inventory;
 import com.elvarg.world.regions.AreaHandler;
 
 /**
@@ -156,7 +158,58 @@ public class ObjectActionPacketListener implements PacketListener {
 	private static void fifthClick(final Player player, Packet packet) {
 
 	}
-
+	private void itemOnObject(final Player player, Packet packet) {
+		int interfaceId = packet.readShort();
+		int id = packet.readUnsignedShort();
+		int y = packet.readLEShortA();
+		int slot = packet.readUnsignedShort();
+		int x = packet.readLEShortA();
+		int z = player.getPosition().getZ();
+		int itemId = packet.readShort();
+		if (interfaceId != Inventory.INTERFACE_ID) {
+			return;
+		}
+		final Item interacted = player.getInventory().forSlot(slot);
+		if (interacted == null || itemId != interacted.getId() || interacted.getSlot() != slot
+				|| !player.getInventory().contains(interacted.getId())) {
+			return;
+		}
+		final Position pos = new Position(x, y, z);
+		final GameObject object = new GameObject(id, pos);
+		if (object == null) {
+			return;
+		}
+		if (!RegionClipping.objectExists(object)) {
+			return;
+		}
+		int distanceX = (player.getPosition().getX() - pos.getX());
+		int distanceY = (player.getPosition().getY() - pos.getY());
+		if (distanceX < 0) {
+			distanceX = -(distanceX);
+		}
+		if (distanceY < 0) {
+			distanceY = -(distanceY);
+		}
+		int size = distanceX > distanceY ? ObjectDefinition.forId(id).getSizeX()
+				: ObjectDefinition.forId(id).getSizeY();
+		if (size <= 0) {
+			size = 1;
+		}
+		object.setSize(size);
+		player.setWalkToTask(new WalkToTask(player, pos, object.getSize(), new FinalizedMovementTask() {
+			@Override
+			public void execute() {
+				// execute code here for action
+				if (interacted.getId() == 995 && object.getId() == 409) {
+					player.getPacketSender().sendMessage("Hello world.");
+					return;
+				}
+				// example ^ (I would suggest an action/abstract action system or something to just keep this neat instead of nesting here. Although, this will still work).
+				player.getPacketSender().sendMessage("Nothing interesting happens...");
+			}
+		}));
+		System.out.println("Interacted with objectId: " + object.getId() + " with the itemId: " + itemId);
+	}
 	@Override
 	public void handleMessage(Player player, Packet packet) {
 		if (player.busy()) {
@@ -177,6 +230,9 @@ public class ObjectActionPacketListener implements PacketListener {
 			break;
 		case PacketConstants.OBJECT_FIFTH_CLICK_OPCODE:
 			fifthClick(player, packet);
+			break;
+		case PacketConstants.ITEM_ON_OBJECT:
+			itemOnObject(player, packet);
 			break;
 		}
 	}
