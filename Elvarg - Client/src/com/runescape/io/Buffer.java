@@ -144,8 +144,12 @@ public final class Buffer extends Cacheable {
 	public int readShort2() {
 		currentPosition += 2;
 		int i = ((payload[currentPosition - 2] & 0xff) << 8) + (payload[currentPosition - 1] & 0xff);
-		if (i > 60000)
+		/**
+		 * if (i > 60000)
 			i = -65535 + i;
+		 */
+		if(i > 32767)
+            i -= 65537;
 		return i;
 
 	}
