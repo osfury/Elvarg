@@ -2456,7 +2456,7 @@ public class Client extends GameApplet {
 		}
 
 	}
-
+	
 	public FileArchive mediaStreamLoader;
 
 	private final int[] hitmarks562 = {31, 32, 33, 34};
@@ -2538,6 +2538,7 @@ public class Client extends GameApplet {
 								.toString(),
 								spriteDrawX, spriteDrawY - 29 + text_over_head_offset, 0x3399ff, 100);
 					} // draws HP above head
+					
 					else if (Configuration.hpAboveHeads
 							&& !Configuration.namesAboveHeads) {
 						newSmallFont.drawCenteredString(
@@ -10921,19 +10922,19 @@ public class Client extends GameApplet {
 				anInt1015 = k;
 			}
 			if (anInt1014 != j)
-				anInt1014 += (j - anInt1014) / 16;
+				anInt1014 += (j - anInt1014) / 2;
 			if (anInt1015 != k)
-				anInt1015 += (k - anInt1015) / 16;
+				anInt1015 += (k - anInt1015) / 2;
 			if (super.keyArray[1] == 1)
-				anInt1186 += (-40 - anInt1186) / 2;
+				anInt1186 += (-24 - anInt1186) / 2;
 			else if (super.keyArray[2] == 1)
-				anInt1186 += (40 - anInt1186) / 2;
+				anInt1186 += (12 - anInt1186) / 2;
 			else
 				anInt1186 /= 2;
 			if (super.keyArray[3] == 1)
-				anInt1187 += (17 - anInt1187) / 2;
+				anInt1187 += (12 - anInt1187) / 2;
 			else if (super.keyArray[4] == 1)
-				anInt1187 += (-17 - anInt1187) / 2;
+				anInt1187 += (-12 - anInt1187) / 2;
 			else
 				anInt1187 /= 2;
 			cameraHorizontal = cameraHorizontal + anInt1186 / 2 & 0x7ff;
