@@ -19,6 +19,7 @@ import com.elvarg.net.packet.PacketSender;
 import com.elvarg.util.FrameUpdater;
 import com.elvarg.util.Stopwatch;
 import com.elvarg.world.World;
+import com.elvarg.world.content.HerbSack;
 import com.elvarg.world.content.PrayerHandler;
 import com.elvarg.world.content.ServerFeed;
 import com.elvarg.world.content.Trading;
@@ -487,6 +488,7 @@ public class Player extends Character {
 	private final ChatMessage chatMessages = new ChatMessage();
 	private final FrameUpdater frameUpdater = new FrameUpdater();
 	private final BonusManager bonusManager = new BonusManager();
+	private final HerbSack herbSack = new HerbSack(this);
 	private PlayerSession session;
 	private PlayerInteractingOption playerInteractingOption = PlayerInteractingOption.NONE;
 	private PlayerRights rights = PlayerRights.PLAYER;
@@ -724,6 +726,10 @@ public class Player extends Character {
 
 	public BonusManager getBonusManager() {
 		return bonusManager;
+	}
+	
+	public HerbSack herbSack() {
+		return herbSack;
 	}
 
 	public int getMultiIcon() {

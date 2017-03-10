@@ -3,8 +3,8 @@
   "password": "tja",
   "staff-rights": "ADMINISTRATOR",
   "position": {
-    "x": 3092,
-    "y": 3518,
+    "x": 3088,
+    "y": 3500,
     "z": 0
   },
   "spell-book": "NORMAL",
@@ -15,18 +15,18 @@
   "rigour": false,
   "augury": false,
   "has-veng": false,
-  "last-veng": -94,
+  "last-veng": -1086,
   "running": true,
   "run-energy": 100,
   "spec-percentage": 100,
   "recoil-damage": 0,
   "poison-damage": 0,
-  "poison-immunity": -94,
-  "overload-timer": -94,
-  "fire-immunity": -94,
-  "teleblock-timer": -94,
-  "prayerblock-timer": -94,
-  "skull-timer": -138927,
+  "poison-immunity": -1086,
+  "overload-timer": -1086,
+  "fire-immunity": -1086,
+  "teleblock-timer": -1086,
+  "prayerblock-timer": -1086,
+  "skull-timer": -140122,
   "target-kills": 0,
   "normal-kills": 0,
   "deaths": 0,
@@ -38,18 +38,18 @@
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 13226,
+      "amount": 1,
       "slot": 1
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 249,
+      "amount": 1,
       "slot": 2
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 199,
+      "amount": 1,
       "slot": 3
     },
     {
@@ -327,7 +327,7 @@
       13034431,
       13034431,
       13034431,
-      13034431,
+      13034435,
       13034431,
       13034431,
       13034431,

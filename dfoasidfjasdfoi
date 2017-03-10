@@ -1,0 +1,324 @@
+[33mcommit 6308fa986a14e3df0bae7f0295fddc72087e7472[m
+Author: Andys1814 <ohsogrebo@gmail.com>
+Date:   Thu Mar 9 14:34:19 2017 -0600
+
+    Test commit.
+
+[33mcommit 36efc2d0edab95d221a9cb6620dc4e34fb3b69b3[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Thu Mar 9 12:15:16 2017 -0500
+
+    ItemOnObject packet
+
+[33mcommit ac2040841313e9cc70fb182fc0a5a6e69b064d40[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Thu Mar 9 12:12:59 2017 -0500
+
+    Fixed the issue where the minimap is marked and the player starts running when clicking spec orb
+
+[33mcommit ce7e4e5587a7cf4185d186b3cfcd35a244a9e024[m
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Tue Mar 7 13:28:10 2017 -0500
+
+    Update README.md
+
+[33mcommit 2b172125cc964954a5cd5d59a9a12407446ea7b5[m
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Tue Mar 7 13:26:30 2017 -0500
+
+    Update README.md
+
+[33mcommit 0da089dbdc112af256c396927cee83898f34d059[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Tue Mar 7 12:57:19 2017 -0500
+
+    Fixed map flag removal upon destination found.
+
+[33mcommit a70ac6ee02a6d34f77348522d4779590bf097e88[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Tue Mar 7 12:47:52 2017 -0500
+
+    optional wildy ditch naming
+
+[33mcommit f6007f5042722c9f0b80d97a1bd65e63d4199c12[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Tue Mar 7 11:17:20 2017 -0500
+
+    Crystal Chest
+
+[33mcommit 5667c02f2b09bc0efb06cb866cd760420a67a7d3[m
+Merge: 950baa4 5a8d8b5
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Mon Mar 6 19:40:28 2017 -0800
+
+    Merge pull request #9 from vl1/master
+    
+    Herblore and ItemOnItem packet, attack speed fxes, etc..
+
+[33mcommit 950baa42e1557f88ffbe61a9b4a7c15fb0d97c5e[m
+Merge: be799ca 8baaeb5
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Mon Mar 6 19:40:05 2017 -0800
+
+    Merge pull request #10 from Tach-Yon/patch-1
+    
+    Just some minor typos
+
+[33mcommit 5a8d8b5d5d5794d78f5b5a64ecfe27e40db1f3cd[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Mon Mar 6 18:24:36 2017 -0700
+
+    Updates
+    
+    --
+
+[33mcommit 8baaeb5975e2b3e8d668b6b47e9575e354f56f53[m
+Author: Tachyon <Flavius256@icloud.com>
+Date:   Mon Mar 6 11:30:39 2017 -0700
+
+    Just some minor typos
+
+[33mcommit 56925177d1f895b83a949cb97a8b8c504d4c2c43[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sun Mar 5 23:51:48 2017 -0700
+
+    Attack speed fix.
+    
+    https://www.rune-server.ee/showthread.php?t=651062&page=26&p=5336728&viewfull=1#post5336728
+
+[33mcommit 96c8d8c1f508927ca60d534464117c8b2d629949[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sun Mar 5 23:45:17 2017 -0700
+
+    Updates
+    
+    ItemOnItem packet implemented.
+    Finished and Unfinished Potion making complete.
+
+[33mcommit be799ca71f13508675b16e3177f125ae22a1ed4b[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Sun Mar 5 23:25:47 2017 -0500
+
+    Random Events Base
+
+[33mcommit 18b84157ca40d09bc7697f4a12d2441d4f5e9ff5[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sun Mar 5 20:54:50 2017 -0700
+
+    Updates
+    
+    Heblore Potion making progress
+    ItemOnItem packet
+    Edits and tweaks
+
+[33mcommit 7adf3a93abd45bfd24088abad8fe96e5ae5d4162[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Sun Mar 5 12:12:31 2017 -0500
+
+    Skills regeneration with Preserve & Rapid Heal & Rapid Restore support
+
+[33mcommit 74af65e5d853160c1f8ee68bd4f3e5e719ef8ea2[m
+Merge: 1dfb2a6 4320b6b
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Sun Mar 5 07:15:26 2017 -0800
+
+    Merge pull request #8 from RomaniaClan/master
+    
+    added oither crowns on RSFont
+
+[33mcommit 4320b6b36f37cc360b451090aa6b22290c46dc4e[m
+Author: Epion OS <dani88_d@yahoo.com>
+Date:   Sun Mar 5 12:01:18 2017 +0000
+
+    http://prntscr.com/eg8vsc
+    
+    http://prntscr.com/eg8vsc
+
+[33mcommit f4d991436047d41606fa3bf8dbe20a0d573e3086[m
+Author: Epion OS <dani88_d@yahoo.com>
+Date:   Sun Mar 5 11:35:34 2017 +0000
+
+    Add all crowns
+    
+    still need to find an fix for clan chat crowns
+
+[33mcommit 41310a2d01496dae83fe1920d14d79671c4b2556[m
+Author: Epion OS <dani88_d@yahoo.com>
+Date:   Sun Mar 5 11:01:03 2017 +0000
+
+    added oither crowns on RSFont
+
+[33mcommit 1dfb2a625ef6338e9ad0ac2dff063e22153992ad[m
+Merge: 602eb7c 83fbf7e
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Sat Mar 4 16:37:53 2017 -0800
+
+    Merge pull request #6 from vl1/master
+    
+    Updates by vl1
+
+[33mcommit 602eb7caca8002a88040e6c9c2017ba81fa882c0[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Sat Mar 4 19:35:27 2017 -0500
+
+    Item Operating system (Glory, DFS, etc..)
+
+[33mcommit 2b9f83c4577f4b544c9d28de2caac3fe9539a96a[m
+Merge: 9016b7c 1d328af
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Sat Mar 4 16:32:40 2017 -0800
+
+    Merge pull request #5 from camelot317/patch-2
+    
+    Added Combat HP Overlay by Professor Oak
+
+[33mcommit 83fbf7e1442bea352aad710fa144c074870c0184[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sat Mar 4 15:24:49 2017 -0700
+
+    Updates
+    
+    - Improved ItemActionPacketListener
+    - Improved Consumables class code (Uses Item construct over integer
+    itemId)
+    - Implemented HerbIdentification
+    - Tweaked TabData to use Item construct over integer itemId
+    - Tweaked TabHandler removed redundant check, Added checkReqs before
+    teleporting user and removing item.
+
+[33mcommit 6aad8e964e040002177f3571a85fe3260d113e08[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sat Mar 4 15:15:06 2017 -0700
+
+    Update
+    
+    Moved SkillManager.java to skills package.
+    Added Oak's Guava stopwatch/
+
+[33mcommit c42057368282007e66150682dad85ae9dee28152[m
+Author: vl1 <minewack@hotmail.com>
+Date:   Sat Mar 4 15:09:08 2017 -0700
+
+    Import and Eclipse clean-up
+    
+    Removed unused imports etc.
+
+[33mcommit 1d328afeb250edf77b915d2f4a3d7feee94528cd[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 19:02:25 2017 +0000
+
+    Added Combat HP Overlay by Professor Oak
+    
+    Credit Professor Oak
+
+[33mcommit 9016b7ce126b124d09888d2c63544dac99c13bf2[m
+Merge: da18692 5a65b66
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Sat Mar 4 08:33:10 2017 -0800
+
+    Merge pull request #3 from camelot317/patch-1
+    
+    library files added
+
+[33mcommit 5a65b668310dc62e8e7e8f687ae958b87255070b[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 14:29:37 2017 +0000
+
+    Delete create
+
+[33mcommit 7e4c7f99a30a325b6bde15dc702929a3a8633247[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 14:29:15 2017 +0000
+
+    added Lib files
+
+[33mcommit 8030d23b4410ddc309dadf2f2cc7f59faf0aacc8[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 14:28:26 2017 +0000
+
+    create
+
+[33mcommit d140576d6ba7ace757dd3969b1a13c10a7b89367[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 14:27:57 2017 +0000
+
+    Delete create
+
+[33mcommit 41d4b880b07299fc21c1cba02acc6aba79c7fae7[m
+Author: camelot317 <dani88_d@yahoo.com>
+Date:   Sat Mar 4 14:27:17 2017 +0000
+
+    create
+
+[33mcommit da18692195f2361d1be712ced906c187563c300b[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 16:31:32 2017 -0500
+
+    Cleaner Starter kit
+
+[33mcommit 8e1516ea6f4061f408a67552c5eb7761c4757d4a[m
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Fri Mar 3 13:21:27 2017 -0500
+
+    Set theme jekyll-theme-time-machine
+
+[33mcommit 5e2ab7b3e931b4afcb9a69a9318bf2fc554b0ff3[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 13:10:29 2017 -0500
+
+    Removed Tab lines in bank interface
+
+[33mcommit 6d18d7cfdcf949c81fe649a864bcc2f19af4b593[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 13:08:21 2017 -0500
+
+    Mod Crown
+    
+    Fixed client sided mod crown bug, and new players no longer admin on
+    login.
+
+[33mcommit d0a2417a6a9a78a9bda661f8c071ea181a8120dd[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 13:04:25 2017 -0500
+
+    Game Console key bind
+
+[33mcommit 853d659f70b3190f7b0f1cf83b09ea562682712c[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 13:01:48 2017 -0500
+
+    Combat fix
+    
+    If you hit 1 you now get experience for it
+
+[33mcommit 99740ba27984224f383face22cd0de68f2a5dccd[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 12:59:57 2017 -0500
+
+    Object Decoration Fixes
+
+[33mcommit cda776e6d61f2b12ca23e6e0ce50ff350fe633d7[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 12:55:12 2017 -0500
+
+    Process Right Click Fix
+
+[33mcommit 120f9e3442b545e2f421a40a2be70413fc37f4eb[m
+Author: DennisWiki <rare_m3@hotmail.com>
+Date:   Fri Mar 3 12:48:02 2017 -0500
+
+    Project Initial Commit
+    
+    Project Initial Commit
+
+[33mcommit cbd2da32c97fb57bc931bbea669a0f960b7936a0[m
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Fri Mar 3 12:49:52 2017 -0500
+
+    Create README.md
+
+[33mcommit d4d115c595970fdaec9dbd49bbd7479bd178d727[m
+Author: Dennis <TheeWiki@users.noreply.github.com>
+Date:   Fri Mar 3 12:43:43 2017 -0500
+
+    Initial commit
