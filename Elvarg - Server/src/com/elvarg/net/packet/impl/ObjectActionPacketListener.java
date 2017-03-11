@@ -60,6 +60,11 @@ public class ObjectActionPacketListener implements PacketListener {
 
 			@Override
 			public void execute() {
+				if (gameObject.getDefinition().getName().contains("Bank"))
+				{
+					System.out.println("zzz");
+					player.getBank(player.getCurrentBankTab()).open();
+				}
 				AreaHandler.firstClickObject(player, id);
 				switch (id) {
 				case WILDERNESS_DITCH:

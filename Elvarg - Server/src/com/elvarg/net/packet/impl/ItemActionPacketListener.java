@@ -6,12 +6,12 @@ import com.elvarg.cache.impl.definitions.ItemDefinition;
 import com.elvarg.net.packet.Packet;
 import com.elvarg.net.packet.PacketConstants;
 import com.elvarg.net.packet.PacketListener;
-import com.elvarg.world.content.Consumables;
-import com.elvarg.world.content.skills.herblore.CreateFinishedPotionTask;
-import com.elvarg.world.content.skills.herblore.CreateUnfinishedPotionTask;
-import com.elvarg.world.content.skills.herblore.FinishedPotionData;
-import com.elvarg.world.content.skills.herblore.HerbIdentification;
-import com.elvarg.world.content.skills.herblore.UnfinishedPotionData;
+//import com.elvarg.world.content.Consumables;
+//import com.elvarg.world.content.skills.herblore.CreateFinishedPotionTask;
+//import com.elvarg.world.content.skills.herblore.CreateUnfinishedPotionTask;
+//import com.elvarg.world.content.skills.herblore.FinishedPotionData;
+//import com.elvarg.world.content.skills.herblore.HerbIdentification;
+//import com.elvarg.world.content.skills.herblore.UnfinishedPotionData;
 import com.elvarg.world.entity.impl.player.Player;
 import com.elvarg.world.model.Item;
 import com.elvarg.world.model.teleportation.tabs.TabHandler;
@@ -30,24 +30,24 @@ public class ItemActionPacketListener implements PacketListener {
 		if (!player.getInventory().contains(new Item[] { first, second })) {
 			return;
 		}
-		if (ItemDefinition.forId(first.getId()).getName().contains("(unf)")) {
-			final Optional<FinishedPotionData> data = FinishedPotionData.get(first);
-			if (data.isPresent()) {
-				CreateFinishedPotionTask task = new CreateFinishedPotionTask(player, data, 28);
-				task.start(player);
-			}
-			return;
-		}
-		if (first.getId() == CreateUnfinishedPotionTask.VIAL_OF_WATER
-				&& ItemDefinition.forId(second.getId()).getName().contains("weed")
-				|| ItemDefinition.forId(second.getId()).getName().contains("leaf")) {
-			final Optional<UnfinishedPotionData> data = UnfinishedPotionData.get(second);
-			if (data.isPresent()) {
-				CreateUnfinishedPotionTask task = new CreateUnfinishedPotionTask(player, data, 28);
-				task.start(player);
-			}
-			return;
-		}
+//		if (ItemDefinition.forId(first.getId()).getName().contains("(unf)")) {
+//			final Optional<FinishedPotionData> data = FinishedPotionData.get(first);
+//			if (data.isPresent()) {
+//				CreateFinishedPotionTask task = new CreateFinishedPotionTask(player, data, 28);
+//				task.start(player);
+//			}
+//			return;
+//		}
+//		if (first.getId() == CreateUnfinishedPotionTask.VIAL_OF_WATER
+//				&& ItemDefinition.forId(second.getId()).getName().contains("weed")
+//				|| ItemDefinition.forId(second.getId()).getName().contains("leaf")) {
+//			final Optional<UnfinishedPotionData> data = UnfinishedPotionData.get(second);
+//			if (data.isPresent()) {
+//				CreateUnfinishedPotionTask task = new CreateUnfinishedPotionTask(player, data, 28);
+//				task.start(player);
+//			}
+//			return;
+//		}
 		player.getPacketSender().sendMessage("Nothing interesting happens..");
 	}
 
@@ -59,13 +59,13 @@ public class ItemActionPacketListener implements PacketListener {
 		if (interacted == null || interacted.getId() != itemId || interacted.getSlot() != slot) {
 			return;
 		}
-		if (Consumables.isFood(player, interacted)) {
-			return;
-		}
-		if (ItemDefinition.forId(interacted.getId()).getName().contains("Grimy")) {
-			HerbIdentification.cleanHerb(player, interacted);
-			return;
-		}
+//		if (Consumables.isFood(player, interacted)) {
+//			return;
+//		}
+//		if (ItemDefinition.forId(interacted.getId()).getName().contains("Grimy")) {
+//			HerbIdentification.cleanHerb(player, interacted);
+//			return;
+//		}
 		TabHandler.onClick(player, interacted);
 		switch (interacted.getId()) {
 		case 13226:

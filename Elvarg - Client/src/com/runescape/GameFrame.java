@@ -14,6 +14,7 @@ public final class GameFrame extends Frame {
 	public GameFrame(GameApplet applet, int width, int height, boolean resizable, boolean fullscreen) {
 		this.applet = applet;
 		setTitle(Configuration.CLIENT_NAME);
+		setFocusTraversalKeysEnabled(false);
 		setResizable(resizable);
 		setUndecorated(fullscreen);
 		setVisible(true); 

@@ -493,6 +493,7 @@ public class GameApplet extends Applet implements Runnable, MouseListener,
 		idleTime = 0;
 		int i = keyevent.getKeyCode();
 		int j = keyevent.getKeyChar();
+		
 		if (i == KeyEvent.VK_F1) {
 			Client.setTab(3);
 		} else if (i == KeyEvent.VK_ESCAPE) {

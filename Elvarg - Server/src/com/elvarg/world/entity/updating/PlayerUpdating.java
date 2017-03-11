@@ -172,23 +172,23 @@ public class PlayerUpdating {
 		} else /*
 				 * Check if the player was running.
 				 */
-		if (player.getSecondaryDirection().toInteger() == -1) {
+			if (player.getSecondaryDirection().toInteger() == -1) {
 
-			/*
-			 * The player walked, an update is required.
-			 */
-			builder.putBits(1, 1);
+				/*
+				 * The player walked, an update is required.
+				 */
+				builder.putBits(1, 1);
 
-			/*
-			 * This indicates the player only walked.
-			 */
-			builder.putBits(2, 1);
+				/*
+				 * This indicates the player only walked.
+				 */
+				builder.putBits(2, 1);
 
-			/*
-			 * This is the player's walking direction.
-			 */
+				/*
+				 * This is the player's walking direction.
+				 */
 
-			builder.putBits(3, player.getPrimaryDirection().toInteger());
+				builder.putBits(3, player.getPrimaryDirection().toInteger());
 
 			/*
 			 * This flag indicates an update block is appended.

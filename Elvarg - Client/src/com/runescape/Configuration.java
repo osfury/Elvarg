@@ -130,7 +130,7 @@ public final class Configuration {
 	 * Displays health above entities heads
 	 */
 	public static boolean hpAboveHeads = false;
-
+	
 	/**
 	 * Displays names above entities
 	 */

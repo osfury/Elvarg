@@ -3,7 +3,6 @@ package com.elvarg.world.content.skills.herblore;
 import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Random;
 
 import com.elvarg.cache.impl.definitions.ItemDefinition;
 import com.elvarg.randomevents.RandomEvent;
